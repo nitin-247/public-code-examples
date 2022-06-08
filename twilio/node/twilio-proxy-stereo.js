@@ -10,7 +10,8 @@ websocketServer.on("connection", ws => {
   const deepgramLive = deepgram.transcription.live({
     encoding: "mulaw",
     sample_rate: 8000,
-    channels: 2
+    channels: 2,
+    multichannel: true
   });
 
   deepgramLive.addListener('transcriptReceived', (transcription) => {
